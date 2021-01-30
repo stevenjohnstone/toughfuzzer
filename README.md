@@ -96,7 +96,7 @@ will hopefully showcase.
 
 In each sub-directory, there are example fuzzers which demonstrate how go-fuzz can leap over some common fuzzing obstacles. Reaching
 a ```panic``` is considered to be "finding a bug". This is obviously quite artificial but it shouldn't take too much imagination to
-seem how each applies to real-world code.
+see how each applies to real-world code.
 
 > Try ```./run.sh``` to run each of the fuzzers
 
@@ -161,12 +161,12 @@ between a variable and ```1337```. The value ```1337``` is used
 to generate new inputs. Not only that, various encodings of the
 integer ```1337``` are added to the corpus. In particular, as
 demonstrated in [sonar/integers.go](./sonar/integers.go), ```1337```
-is added to the corpus as
+is added to the corpus as a
 
-* a big-endian array of bytes
+* big-endian array of bytes
 * little-endian array of bytes
-* a hex string
-* a decimal string
+* hex string
+* decimal string
 
 This helps go-fuzz deftly manoeuvre past comparison with magic
 numbers. Helpfully, it anticipates that the function under test
