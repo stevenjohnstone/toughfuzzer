@@ -182,4 +182,38 @@ missing a beat.
 
 ![Jesse Magic](https://media.giphy.com/media/NmerZ36iBkmKk/giphy.gif)
 
-## Versify
+> Convince yourself that sonar is doing the work here by adding ```-sonar=false``` to the invocation of ```go-fuzz```
+
+## Big Event
+
+In [race.go](./bigevent/race.go) I've strung together some obstacles covered above to make this a bit more challenging. Go-fuzz
+should make short work of it.
+
+On my mid-range laptop, I get the following results on running ```run.sh```
+
+```shell
+Running fuzzers in sonar
+Running FuzzCheckSum
+Found crasher for FuzzCheckSum after 6 seconds: "\xa3\xe7t\x01\x03\x80\xedӱ\x92Hգ\f*w"
+Running FuzzIntegerBigEndian
+Found crasher for FuzzIntegerBigEndian after 6 seconds: "\x00\x00\x00\x00\x00\x00\x059"
+Running FuzzIntegerLittleEndian
+Found crasher for FuzzIntegerLittleEndian after 6 seconds: "9\x05\x00\x00\x00\x00\x00\x00"
+Running FuzzIntegerDecimalString
+Found crasher for FuzzIntegerDecimalString after 6 seconds: "1337"
+Running FuzzIntegerHexString
+Found crasher for FuzzIntegerHexString after 48 seconds: "539"
+Running FuzzString
+Found crasher for FuzzString after 6 seconds: "gfedcba gnirts 7331"
+Running fuzzers in literals
+Running FuzzLiteral
+Found crasher for FuzzLiteral after 6 seconds: "really too long to b" +
+"e guessed"
+Running fuzzers in bigevent
+Running FuzzBigEvent
+Found crasher for FuzzBigEvent after 27 seconds: "race2021 is on! F$ck" +
+" COVID\x05\xee?\xa6"
+```
+
+
+

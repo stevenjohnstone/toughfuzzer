@@ -38,7 +38,7 @@ function fuzz() {
     popd &> /dev/null
 }
 
-dirs=("sonar" "literals")
+dirs=("sonar" "literals" "bigevent")
 
 
 for dir in "${dirs[@]}"
