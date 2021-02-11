@@ -1,6 +1,6 @@
 # Tough Fuzzer
 
-My experiences of introducing
+My experience of introducing
 go-fuzz to developers has taught me that the project README and preconceptions
 about *fuzzing* can lead to limiting mental models of go-fuzz. 
 In particular, the idea that *randomness* is the most important property
