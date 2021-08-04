@@ -59,7 +59,7 @@ func buggy(data []byte) {
     }
 }
 ```
-The fuzzer can do this without have to guess all four bytes of ```data``` (taking on average 2^31 tries with uniformly distributed guesses). It can,
+The fuzzer can do this without having to guess all four bytes of ```data``` (taking on average 2^31 tries with uniformly distributed guesses). It can,
 once on the right track, guess each byte one after the other with on the order of 4*2^7 mutations. 
 
 An obstacle would be some code which causes an evolutionary dead-end. For example, consider the following function:
